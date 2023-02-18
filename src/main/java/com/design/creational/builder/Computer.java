@@ -50,6 +50,8 @@ public class Computer {
 
 	public static void main(String args[]) {
 		Computer comp = new Computer.ComputerBuilder("500gb", "8gb").setGraphisCardenabled(true).build();
+		System.out.println(comp.hdd);
+		
 	}
 
 }
