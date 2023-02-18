@@ -1,33 +1,35 @@
-package main.java.prototype;
+package com.design.creational.prototype;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Employees implements Cloneable{
+public class Employees implements Cloneable {
 	private List<String> empList;
-	public Employees(){
+
+	public Employees() {
 		empList = new ArrayList<String>();
 	}
-	
-	public Employees(List<String> list){
-		this.empList=list;
+
+	public Employees(List<String> list) {
+		this.empList = list;
 	}
-	public void loadData(){
-		//read all employees from database and put into the list
+
+	public void loadData() {
+		// read all employees from database and put into the list
 		empList.add("Pankaj");
 		empList.add("Raj");
 		empList.add("David");
 		empList.add("Lisa");
 	}
-	
+
 	public List<String> getEmpList() {
 		return empList;
 	}
-	
+
 	@Override
 	public Object clone() {
 		List<String> temp = new ArrayList<String>();
-		empList.forEach(emp->temp.add(emp));
+		empList.forEach(emp -> temp.add(emp));
 		return new Employees(temp);
 	}
 }

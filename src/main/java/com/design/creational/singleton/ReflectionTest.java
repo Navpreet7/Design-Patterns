@@ -1,4 +1,4 @@
-package main.java.singleton;
+package com.design.creational.singleton;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -9,10 +9,10 @@ public class ReflectionTest {
 		EagerInitialized inst1 = EagerInitialized.getInstance();
 		EagerInitialized inst2 = null;
 		Constructor[] constructors = EagerInitialized.class.getDeclaredConstructors();
-		for (Constructor constructor: constructors) {
+		for (Constructor constructor : constructors) {
 			constructor.setAccessible(true);
 			try {
-				inst2 =(EagerInitialized) constructor.newInstance();
+				inst2 = (EagerInitialized) constructor.newInstance();
 			} catch (InstantiationException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
